@@ -1,5 +1,5 @@
 var component = require('./component')
-require('./main.css')
+require('./main')
 
 var app = document.createElement('div')
 

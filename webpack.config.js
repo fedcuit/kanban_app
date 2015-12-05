@@ -14,6 +14,9 @@ var common = {
     path: BUILD_PATH,
     filename: 'bundle.js'
   },
+  resolve: {
+    extensions: ['', '.css', '.js']
+  },
   module: {
     loaders: [{
       test: /\.css$/,
