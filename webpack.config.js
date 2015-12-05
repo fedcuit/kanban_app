@@ -24,5 +24,14 @@ module.exports = {
     inline: true,
     progess: true,
     port: 4000
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loaders: ['style', 'css'],
+        include: APP_PATH
+      }
+    ]
   }
 };
