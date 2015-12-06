@@ -15,12 +15,16 @@ var common = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['', '.css', '.js']
+    extensions: ['', '.css', '.js', '.jsx']
   },
   module: {
     loaders: [{
       test: /\.css$/,
       loaders: ['style', 'css'],
+      include: APP_PATH
+    }, {
+      test: /\.jsx?$/,
+      loaders: ['babel', 'babel-loader'],
       include: APP_PATH
     }]
   }
