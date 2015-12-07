@@ -1,9 +1,14 @@
-import React, { PropTypes } from 'react'
+import React, {PropTypes} from 'react'
 
 const Note = React.createClass({
-  render () {
+  render() {
     return (
-      <div>Learn Webpack</div>
+      <div>
+        <b>react-transform-hmr </b>
+        is not supported in babel 6 yet!
+        <br/>
+        So have to use the deprecated react-hot-loader for now.
+      </div>
     )
   }
 })

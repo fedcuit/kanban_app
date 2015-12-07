@@ -3,7 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 
-const TARGET = process.env.npm_lifecycle_event;
+const ENV = process.env.NODE_ENV;
 const ROOT_PATH = path.resolve(__dirname);
 const APP_PATH = path.resolve(ROOT_PATH, 'app')
 const BUILD_PATH = path.resolve(ROOT_PATH, 'build')
@@ -24,12 +24,12 @@ var common = {
       include: APP_PATH
     }, {
       test: /\.jsx?$/,
-      loaders: ['babel'],
+      loaders: ['react-hot', 'babel'],
       include: APP_PATH
     }]
   }
 }
-if (TARGET === 'start' || !TARGET) {
+if (ENV === 'development' || !ENV) {
   module.exports = merge(common, {
     devtool: 'eval',
     plugins: [
