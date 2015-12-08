@@ -1,16 +1,11 @@
 import React, {PropTypes} from 'react'
 
-const Note = React.createClass({
-  render() {
+class Note extends React.Component {
+  render () {
     return (
-      <div>
-        <b>react-transform-hmr </b>
-        is not supported in babel 6 yet!
-        <br/>
-        So have to use the deprecated react-hot-loader for now.
-      </div>
+      <div>{this.props.task}</div>
     )
   }
-})
+}
 
-export default Note
+export default Note;
