@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "node-uuid": "^1.4.7",
-    "react": "^0.14.3"
+    "react": "^0.14.3",
+    "underscore": "^1.8.3"
   }
 }

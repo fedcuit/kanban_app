@@ -5,7 +5,7 @@ const Notes = React.createClass({
   renderNote(note) {
     return (
       <li className="note" key={`note${note.id}`}>
-        <Note task={note.task}/>
+        <Note task={note.task} onEdit={this.props.onEdit.bind(null, note.id)}/>
       </li>
     )
   },
