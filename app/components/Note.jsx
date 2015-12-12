@@ -35,7 +35,12 @@ class Note extends React.Component {
 
   renderTask () {
     return (
-      <div onClick={this.edit}>{this.props.task}</div>
+      <div>
+        <span className="task" onClick={this.edit}>
+          {this.props.task}
+        </span>
+        <button className="delete" onClick={this.props.onDelete}>&times;</button>
+      </div>
     )
   }
 

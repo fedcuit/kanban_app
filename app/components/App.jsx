@@ -22,18 +22,20 @@ export default class App extends React.Component {
       ]
     }
     this.onEdit = this.onEdit.bind(this)
+    this.onDelete = this.onDelete.bind(this)
+    this.addNote = this.addNote.bind(this)
   }
   render () {
     const notes = this.state.notes
     return (
       <div>
         <button className="add-note" onClick={this.addNote}>+</button>
-        <Notes items={notes} onEdit={this.onEdit}/>
+        <Notes items={notes} onEdit={this.onEdit} onDelete={this.onDelete}/>
       </div>
     );
   }
-  
-  onEdit(id, task) {
+
+  onEdit (id, task) {
     let notes = this.state.notes;
     const index = _(notes).findIndex(note => note.id == id)
     if (index >= 0) {
@@ -42,5 +44,20 @@ export default class App extends React.Component {
     } else {
       console.log(`Task with id ${id} can not be found`);
     }
+  }
+  onDelete (id) {
+    let notes = _(this.state.notes).reject(_.matcher({id: id}))
+    this.setState({notes})
+  }
+
+  addNote () {
+    this.setState({
+      notes: this.state.notes.concat([
+        {
+          task: 'New task',
+          id: uuid.v4()
+        }
+      ])
+    })
   }
 }
